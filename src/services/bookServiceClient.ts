@@ -23,7 +23,7 @@ export const getAllBooks = async (
 ): Promise<bookCatalogResponse[]> => {
   try {
     const response = await axios.get<bookCatalogResponse[]>(
-      `${API_GATEWAY_URL}/books/`,
+      `${API_GATEWAY_URL}/api/books/`,
       {
         headers: {
           Authorization: token,
@@ -47,7 +47,7 @@ export const getCategoryBooks = async (
 ): Promise<bookCatalogResponse[]> => {
   try {
     const response = await axios.get<BookCatalogListResponse>(
-      `${API_GATEWAY_URL}/books/category`,
+      `${API_GATEWAY_URL}/api/books/category`,
       {
         headers: {
           Authorization: token,
