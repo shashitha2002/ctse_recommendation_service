@@ -30,7 +30,7 @@ export const getTrandingBooks = async (req: Request, res: Response) => {
 
     maxPrice.forEach((item) => {
       let b = books.filter((book) => book.price === item);
-      b.map((element) => trandingBooks.push(element));
+      b.forEach((element) => trandingBooks.push(element));
     });
 
     res.status(200).json(trandingBooks);
@@ -68,7 +68,7 @@ export const getlimitedBooks = async (req: Request, res: Response) => {
 
     lowCount.forEach((item) => {
       let b = books.filter((book) => book.stockCount === item);
-      b.map((element) => limitedBooks.push(element));
+      b.forEach((element) => limitedBooks.push(element));
     });
 
     console.log("all the books count", books.length);
